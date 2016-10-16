@@ -1,22 +1,23 @@
 #!/usr/bin/swift
 
 var checkNumber:Int = 600851475143
-var currentCheck:Int = checkNumber
+var currentCheck:Int = checkNumber - 1
 var primeCheck:Int = 0
 //Get the factors of the number
 
 
 func isPrime(number:Int)->Bool{
-		primeCheck = number
-		while primeCheck > 0{
-			print("PrimeChecking")
+	primeCheck = number
+		while(primeCheck > 1){
+			//print("PrimeChecking")
 
-			if number % primeCheck == 0{
-				return false
+				if(number % primeCheck != 0){
+					return false
 
-			}
+				}
 			primeCheck = primeCheck - 1
 		}
+	print("is Prime")
 	return true
 
 }

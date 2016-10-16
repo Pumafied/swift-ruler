@@ -7,8 +7,7 @@ var sumOfSquares = 0
 var squareOfSums = 0
 for x in 0...100{
 	sumOfSquares += x * x
-
-//Square of sums
+	//Square of sums
 	squareOfSums += x
 }
 squareOfSums = squareOfSums  * squareOfSums
