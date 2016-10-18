@@ -24,7 +24,7 @@ while productOne < 1000 && productTwo < 1000{
 
 		}
 
-	print (String(productOne) + " " + String(productTwo))
+	//print (String(productOne) + " " + String(productTwo))
 	if(productTwo == 999){
 		productOne += 1
 		productTwo = 0
