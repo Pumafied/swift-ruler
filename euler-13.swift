@@ -20,4 +20,4 @@ for char in stringSum.unicodeScalars{
 	}
 	 count += 1
 }
-print(built.stringByReplacingOccurrencesOfString(".", withString: ""))
+print(built)
