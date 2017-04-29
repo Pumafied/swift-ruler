@@ -1,67 +1,55 @@
 #!/usr/bin/swift
 
+import Foundation
+
 var checkNumber:Int = 600851475143
 var currentCheck:Int = checkNumber - 1
 var primeCheck:Int = 0
 //Get the factors of the number
 
-var compareArray = [2]
 
-var primeCheck:Int = 0
+// This is an even faster version is prime
+func fastestIsPrime(number:Int)->Bool{
 
-func isPrime(number:Int)->Bool{
-	primeCheck = number - 1
-		while(primeCheck > 1){
-			//print("PrimeChecking")
+	return fastPrime.contains(number)
 
-				if(number % primeCheck == 0){
-					return false
-
-				}
-			primeCheck = primeCheck - 1
-		}
-	//print("is Prime")
-	return true
 
 }
-	//This version of is prime relies on a store and compare version
-	func fasterIsPrime(number:Int)->Bool{
-		//print("number" + String(number))
-		//print("number in array " + String(compareArray[compareArray.count-1]))
-		print("array index " + String(compareArray.count-1))
-		if(number > compareArray[compareArray.count - 1]){
-			//print("number Greater")
-			//Generate more arrays until the bottom
-			var check:Int = compareArray[compareArray.count - 1] + 1
-			//Make sure it ends up where it needs to be
-			while(check <= number){
-				//print("checking")
-				//print(isPrime(number:check))
-				if(isPrime(number:check)){
-					//print("is Prime")
-					print(check)
-					compareArray.append(check)
-				}
-				if(check > number){
-					break
-				}
-				check = check + 1
-			}
-		}
-		//Implicit else - plus added benifit ofsolving after adding
-		//Figure out if the current number is in the array
-		print(compareArray.contains(number))
-		return compareArray.contains(number)
 
+var fastPrime = [Int]()
+//Takes a number and generates a prime set for fastest is prime
+func generatePrimeSet(number:Int){
+	//First add every number from 1 to the number to an array
+	var generator:Int = 0
+	for index in 1...number{
+		fastPrime.append(index)
 	}
 
+	print("generated start set")
+
+	var current:Int = 3
+	var currentRunner:Int = 2
+
+	while(current < number){
+		while(currentRunner < current){
+			if(current % currentRunner == 0){
+				fastPrime.remove(at:(fastPrime.index(of:current))!)
+				break
+			}
+			print(current)
+			current += 1
+		}
+	}
+	print("generated")
+}
 
 
+generatePrimeSet(number:(checkNumber/2))
 
 while currentCheck > 0{
 	if checkNumber % currentCheck == 0{
 		//Then it is a factor
-		if(isPrime(currentCheck)){
+		if(fastestIsPrime(number:currentCheck)){
 
 			print("Done: " + String(currentCheck))
 			break

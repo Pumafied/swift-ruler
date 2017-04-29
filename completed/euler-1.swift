@@ -1,4 +1,6 @@
 #!/usr/bin/swift
+# Completed
+
 var total:Int = 0
 
 for x in 1..<1000{
