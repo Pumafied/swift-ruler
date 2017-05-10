@@ -3,7 +3,7 @@
 
 func isPalindrome(number:Int) -> Bool{
 	let value = String(number)
-		if(String(number) == String(value.characters.reverse())){
+		if(String(number) == String(value.characters.reversed())){
 			return true
 		}
 	return false
@@ -17,7 +17,7 @@ var current:Int = 1
 
 while productOne < 1000 && productTwo < 1000{
 	current = productOne * productTwo
-		if(isPalindrome(current)){
+		if(isPalindrome(number:current)){
 			if(current > currentLargest){
 				currentLargest = current
 			}
