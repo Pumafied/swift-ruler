@@ -5,6 +5,8 @@ import Foundation
 var checkNumber:Int = 600851475143
 var currentCheck:Int = checkNumber - 1
 var primeCheck:Int = 0
+var fastPrime = [Int]()
+
 //Get the factors of the number
 
 
@@ -16,8 +18,8 @@ func fastestIsPrime(number:Int)->Bool{
 
 }
 
-var fastPrime = [Int]()
-//Takes a number and generates a prime set for fastest is prime
+
+///Takes a number and generates a prime set for fastest is prime
 func generatePrimeSet(number:Int){
 	//First add every number from 1 to the number to an array
 	var generator:Int = 0
